@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-This code snippet defines a function called `make_multiplier` that takes a `multiplier` value as input and returns a function. 
-The returned function takes a `second_multiplier` value as input and returns the product of the two multipliers.
+This code snippet defines a function called `make_multiplier` that
+takes a `multiplier` value as input and returns a function. 
+The returned function takes a `second_multiplier` value as input and
+returns the product of the two multipliers.
 """
 
 from typing import Callable
