@@ -6,10 +6,10 @@ This code snippet defines a function called `to_kv` that takes a string
 square of `v`.
 """
 
-from typing import Union
+from typing import Union, Tuple
 
 
-def to_kv(k: str, v: Union[int, float]) -> tuple[Union[str, float]]:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[Union[str, float]]:
     """
     Calculate the square of a number and return a tuple with the original
     string and the squared value.
