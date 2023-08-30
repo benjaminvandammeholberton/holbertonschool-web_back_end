@@ -11,10 +11,10 @@ result = element_length(lst)
 print(result)
 """
 
-from typing import List, Tuple
+from typing import Iterable, List, Sequence, Tuple
 
 
-def element_length(lst: List[str]) -> List[Tuple[str, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
     Calculates the length of each element in the input list.
 
