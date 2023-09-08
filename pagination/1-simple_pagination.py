@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""module that handle simple pagination"""
 import csv
 import math
 from typing import List
