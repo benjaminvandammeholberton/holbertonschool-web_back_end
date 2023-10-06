@@ -323,7 +323,7 @@ bob@dylan:~$
 ``` 
 &nbsp;
 
-6. Handle multiple promises
+### 6. Handle multiple promises
 *mandatory*
 
 Import ```signUpUser``` from ```4-user-promise.js``` and ```uploadPhoto``` from ```5-photo-reject.js```.
@@ -351,7 +351,7 @@ bob@dylan:~$
 ```
 &nbsp;
 
-7. Load balancer
+### 7. Load balancer
 *mandatory*
 
 Write and export a function named ```loadBalancer```. It should accept two arguments ```chinaDownload ```(Promise) and ```USDownload``` (Promise).
@@ -396,7 +396,7 @@ bob@dylan:~$
 ```
 &nbsp;
 
-8. Throw error / try catch
+### 8. Throw error / try catch
 *mandatory*
 
 Write a function named ```divideFunction``` that will accept two arguments: ```numerator``` (Number) and ```denominator``` (Number).
@@ -426,7 +426,7 @@ bob@dylan:~$
 ```
 &nbsp;
 
-9. Throw an error
+### 9. Throw an error
 *mandatory*
 
 Write a function named ```guardrail``` that will accept one argument ```mathFunction``` (Function).
@@ -458,7 +458,7 @@ bob@dylan:~$
 ```
 &nbsp;
 
-10. Await / Async
+### 10. Await / Async
 *#advanced*
 
 Import ```uploadPhoto``` and ```createUser``` from ```utils.js```
