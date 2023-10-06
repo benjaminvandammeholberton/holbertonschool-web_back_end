@@ -1,4 +1,5 @@
 # ES6 Promises
+&nbsp;
 
 ## Learning Objectives
 - Promises (how, why, and what)
@@ -7,6 +8,7 @@
 - Throw / Try
 - The await operator
 - How to use an ```async``` function
+&nbsp;
 
 ## Requirements
 - All your files will be executed on Ubuntu 18.04 LTS using NodeJS 12.11.x
@@ -17,6 +19,7 @@
 - Your code will be tested using ```Jest``` and the command ```npm run test```
 - Your code will be verified against lint using ESLint
 - All of your functions must be exported
+&nbsp;
 
 ## Setup
 
@@ -39,6 +42,7 @@ in your project directory:
 - Install Jest using: ```npm install --save-dev jest```
 - Install Babel using: ```npm install --save-dev babel-jest @babel/core @babel/preset-env @babel/cli```
 - Install ESLint using: ```npm install --save-dev eslint```
+&nbsp;
 
 ## Files
 
@@ -141,6 +145,7 @@ module.exports = {
 
 ### and…
 Don’t forget to run ```$ npm install``` when you have the ```package.json```
+&nbsp;
 
 ## Response Data Format
 ```uploadPhoto``` returns a response with the format
@@ -157,8 +162,11 @@ Don’t forget to run ```$ npm install``` when you have the ```package.json```
   lastName: 'Salva',
 }
 ```
+&nbsp;
 
 ## Tasks
+&nbsp;
+
 ### 0. Keep every promise you make and only make promises you can keep
 *mandatory*
 
@@ -175,6 +183,7 @@ bob@dylan:~$ npm run dev 0-main.js
 true
 bob@dylan:~$ 
 ```
+&nbsp;
 
 ### 1. Don't make a promise...if you know you can't keep it
 *mandatory*
@@ -209,6 +218,7 @@ Promise {
     ...
 bob@dylan:~$ 
 ```
+&nbsp;
 
 ### 2. Catch me if you can!
 *mandatory*
@@ -235,6 +245,7 @@ bob@dylan:~$ npm run dev 2-main.js
 Got a response from the API
 bob@dylan:~$ 
 ```
+&nbsp;
 
 ### 3. Handle multiple successful promises
 *mandatory*
@@ -257,6 +268,7 @@ bob@dylan:~$ npm run dev 3-main.js
 photo-profile-1 Guillaume Salva
 bob@dylan:~$ 
 ```
+&nbsp;
 
 ### 4. Simple promise
 *mandatory*
@@ -284,8 +296,9 @@ bob@dylan:~$ npm run dev 4-main.js
 Promise { { firstName: 'Bob', lastName: 'Dylan' } }
 bob@dylan:~$ 
 ```
+&nbsp;
 
-5. Reject the promises
+### 5. Reject the promises
 *mandatory*
 
 Write and export a function named ```uploadPhoto```. It should accept one argument ```fileName``` (string).
@@ -310,6 +323,7 @@ Promise {
     ..
 bob@dylan:~$
 ``` 
+&nbsp;
 
 6. Handle multiple promises
 *mandatory*
@@ -337,6 +351,7 @@ bob@dylan:~$ npm run dev 6-main.js
 Promise { <pending> }
 bob@dylan:~$ 
 ```
+&nbsp;
 
 7. Load balancer
 *mandatory*
@@ -381,6 +396,7 @@ Downloading from UK is faster
 Downloading from FR is faster
 bob@dylan:~$ 
 ```
+&nbsp;
 
 8. Throw error / try catch
 *mandatory*
@@ -410,6 +426,7 @@ bob@dylan:~$ npm run dev 8-main.js
 
 bob@dylan:~$ 
 ```
+&nbsp;
 
 9. Throw an error
 *mandatory*
@@ -441,6 +458,7 @@ bob@dylan:~$ npm run dev 9-main.js
 [ 'Error: cannot divide by 0', 'Guardrail was processed' ]
 bob@dylan:~$ 
 ```
+&nbsp;
 
 10. Await / Async
 *#advanced*
