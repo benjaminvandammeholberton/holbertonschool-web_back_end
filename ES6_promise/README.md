@@ -1,4 +1,5 @@
 # ES6 Promises
+![cover](/images/75862d67ca51a042003c.jpeg)
 
 ## Learning Objectives
 - Promises (how, why, and what)
