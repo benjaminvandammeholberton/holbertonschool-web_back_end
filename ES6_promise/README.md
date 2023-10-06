@@ -1,5 +1,4 @@
 # ES6 Promises
-&nbsp;
 
 ## Learning Objectives
 - Promises (how, why, and what)
@@ -165,7 +164,6 @@ Don’t forget to run ```$ npm install``` when you have the ```package.json```
 &nbsp;
 
 ## Tasks
-&nbsp;
 
 ### 0. Keep every promise you make and only make promises you can keep
 *mandatory*
