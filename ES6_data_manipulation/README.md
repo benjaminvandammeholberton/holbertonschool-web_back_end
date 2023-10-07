@@ -137,9 +137,9 @@ module.exports = {
 
 ### and…
 
-&nbsp;
-
 Don’t forget to run `$ npm install` when you have the `package.json`
+
+&nbsp;
 
 ## Tasks
 
@@ -460,7 +460,8 @@ bob@dylan:~$
 
 ### 10. More map data structure
 
-mandatory
+_mandatory_
+
 Create a function named `updateUniqueItems` that returns an updated map for all items with initial quantity at 1.
 
 It should accept a map as an argument. The map it accepts for argument is similar to the map you create in the previous task.
@@ -502,6 +503,7 @@ bob@dylan:~$
 ### 11. Weak link data structure
 
 _#advanced_
+
 Export a `const` instance of `WeakMap` and name it `weakMap`.
 
 Export a new function named `queryAPI`. It should accept an endpoint argument like so:

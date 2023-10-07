@@ -1,5 +1,7 @@
 # holbertonschool-web_back_end
 
+This repository showcases my learning experiences in back-end development at Holberton School.
+
 - ## ES6_basic
 - ## ES6_classes
 - ## ES6_data_manipulation
