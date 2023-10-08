@@ -2,6 +2,8 @@
 
 This repository showcases my learning experiences in web back-end development at Holberton School.
 
+![cover](/images/logo_python.png)
+
 - ## ES6_basic
 - ## ES6_classes
 - ## ES6_data_manipulation
