@@ -10,7 +10,7 @@ function updateStudentGradeByCity(students, city, newGrades) {
     .filter((student) => student.location === city)
     .map((student) => {
       const matchingGrade = newGrades.find(
-        (grade) => grade.studentId === student.id
+        (grade) => grade.studentId === student.id,
       );
 
       const updatedStudent = { ...student };
