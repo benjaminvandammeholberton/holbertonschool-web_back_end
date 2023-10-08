@@ -267,6 +267,7 @@ bob@dylan:~$ ./9-main.py
 ### 10. Duck typing - first element of a sequence
 
 _#advanced_
+
 Augment the following code with the correct duck-typed annotations:
 
 ```
