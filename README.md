@@ -3,6 +3,8 @@
 This repository showcases my learning experiences in web back-end development at Holberton School.
 
 ![cover](/images/logo_python.png)
+![cover](/images/logo_ES6.png)
+![cover](/images/logo_mongoDB.png)
 
 - ## ES6_basic
 - ## ES6_classes
