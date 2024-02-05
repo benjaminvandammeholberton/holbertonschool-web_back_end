@@ -2,8 +2,8 @@
 """
 This module defines safe_first_element function
 """
-from typing import Sequence, Any
-def safe_first_element(lst: Sequence[Any])-> Any:
+from typing import Sequence, Any, Optional
+def safe_first_element(lst: Sequence[Any])-> Optional[Any]:
     """
     Function that returns the first element of a sequence
 
