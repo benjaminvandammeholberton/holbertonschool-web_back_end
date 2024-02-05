@@ -16,10 +16,10 @@ Outputs:
     float: The sum of all the elements in the input list as a float.
 """
 
-from typing import List, Union
+from typing import Union
 
 
-def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
+def sum_mixed_list(mxd_lst: list[Union[int, float]]) -> float:
     """
     Calculate the sum of all the elements in the input list.
 
