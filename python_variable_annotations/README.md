@@ -32,8 +32,6 @@
 
 ### 0. Basic annotations - add
 
-_mandatory_
-
 Write a type-annotated function `add` that takes a float `a` and a float `b` as arguments and returns their sum as a float.
 
 ```
@@ -50,8 +48,6 @@ True
 ```
 
 ### 1. Basic annotations - concat
-
-_mandatory_
 
 Write a type-annotated function `concat` that takes a string `str1` and a string `str2` as arguments and returns a concatenated string
 
@@ -72,8 +68,6 @@ True
 ```
 
 ### 2. Basic annotations - floor
-
-**mandatory**
 
 Write a type-annotated function `floor` which takes a float `n` as argument and returns the floor of the float.
 
@@ -99,8 +93,6 @@ floor(3.14) returns 3, which is a <class 'int'>
 
 ### 3. Basic annotations - to string
 
-**mandatory**
-
 Write a type-annotated function `to_str` that takes a float `n` as argument and returns the string representation of the float.
 
 ```
@@ -120,8 +112,6 @@ to_str(3.14) returns 3.14, which is a <class 'str'>
 ```
 
 ### 4. Define variables
-
-_mandatory_
 
 Define and annotate the following variables with the specified values:
 
@@ -153,8 +143,6 @@ school is a <class 'str'> with a value of Holberton
 
 ### 5. Complex types - list of floats
 
-_mandatory_
-
 Write a type-annotated function `sum_list` which takes a list `input_list` of floats as argument and returns their sum as a float.
 
 ```
@@ -176,8 +164,6 @@ sum_list(floats) returns 6.470000000000001 which is a <class 'float'>
 ```
 
 ### 6. Complex types - mixed list
-
-_mandatory_
 
 Write a type-annotated function `sum_mixed_list` which takes a list `mxd_lst` of integers and floats and returns their sum as a float.
 
@@ -201,8 +187,6 @@ sum_mixed_list(mixed) returns 679.13 which is a <class 'float'>
 
 ### 7. Complex types - string and int/float to tuple
 
-_mandatory_
-
 Write a type-annotated function `to_kv` that takes a string `k` and an int OR float `v` as arguments and returns a tuple. The first element of the tuple is the string `k`. The second element is the square of the int/float `v` and should be annotated as a float.
 
 ```
@@ -223,8 +207,6 @@ bob@dylan:~$ ./7-main.py
 
 ### 8. Complex types - functions
 
-_mandatory_
-
 Write a type-annotated function `make_multiplier` that takes a float `multiplier` as argument and returns a function that multiplies a float by `multiplier`.
 
 ```
@@ -242,8 +224,6 @@ bob@dylan:~$ ./8-main.py
 ```
 
 ### 9. Let's duck type an iterable object
-
-_mandatory_
 
 Annotate the below function’s parameters and return values with the appropriate types
 
@@ -265,8 +245,6 @@ bob@dylan:~$ ./9-main.py
 ```
 
 ### 10. Duck typing - first element of a sequence
-
-_#advanced_
 
 Augment the following code with the correct duck-typed annotations:
 
@@ -293,8 +271,6 @@ bob@dylan:~$ ./100-main.py
 ```
 
 ### 11. More involved type annotations
-
-_#advanced_
 
 Given the parameters and the return values, add type annotations to the function
 
@@ -328,8 +304,6 @@ return: typing.Union[typing.Any, ~T]
 ```
 
 ### 12. Type Checking
-
-_#advanced_
 
 Use `mypy` to validate the following piece of code and apply any necessary changes.
 
