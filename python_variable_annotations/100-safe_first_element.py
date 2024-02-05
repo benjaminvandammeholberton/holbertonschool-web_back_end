@@ -2,8 +2,8 @@
 """
 This module defines safe_first_element function
 """
-from typing import Sequence, Any, Optional, Union
-def safe_first_element(lst: Sequence[Any])->Optional[Union[Any, None]]:
+from typing import Sequence, Any, Union
+def safe_first_element(lst: Sequence[Any])->Union[Any, None]:
     """
     Function that returns the first element of a sequence
 
