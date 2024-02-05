@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
-"""
-This module defines safe_first_element function
-"""
-from typing import Sequence, Any, Union
-def safe_first_element(lst: Sequence[Any])-> Union[Any, None]:
-    """
-    Function that returns the first element of a sequence
+"""Task 10. Duck typing - first element of a sequence"""
 
-    Args:
-        lst: the sequence we need to extract the first element
-    
-    Returns: The first element if the argument exists, otherwise None
+from typing import Any, Sequence, Union
+
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+    """
+    Returns the first element of a sequence,
+    or None if lst is None
     """
     if lst:
         return lst[0]
