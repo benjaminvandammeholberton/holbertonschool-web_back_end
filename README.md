@@ -14,3 +14,4 @@ This repository showcases my learning experiences in web back-end development at
 - ## pagination
 - ## python_async_comprehension
 - ## python_variable_annotations
+- ## caching
