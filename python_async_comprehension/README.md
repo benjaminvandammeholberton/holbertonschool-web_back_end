@@ -2,9 +2,9 @@
 
 ## Learning Objectives
 
-- [How to write an asynchronous generator]()
-- [How to use async comprehensions]()
-- [How to type-annotate generators]()
+- [How to write an asynchronous generator](https://peps.python.org/pep-0530/)
+- [How to use async comprehensions](https://www.blog.pythonlibrary.org/2017/02/14/whats-new-in-python-asynchronous-comprehensions-generators/)
+- [How to type-annotate generators](https://stackoverflow.com/questions/42531143/how-to-type-hint-a-generator-in-python-3)
 
 ## Requirements
 
@@ -25,8 +25,6 @@
 ## Tasks
 
 ### 0. Async Generator
-
-_mandatory_
 
 Write a coroutine called `async_generator` that takes no arguments.
 
@@ -54,8 +52,6 @@ bob@dylan:~$ ./0-main.py
 
 ## 1. Async Comprehensions
 
-_mandatory_
-
 Import `async_generator` from the previous task and then write a coroutine called `async_comprehension` that takes no arguments.
 
 The coroutine will collect 10 random numbers using an async comprehensing over `async_generator`, then return the 10 random numbers.
@@ -78,8 +74,6 @@ bob@dylan:~$ ./1-main.py
 ```
 
 ## 2. Run time for four parallel comprehensions
-
-_mandatory_
 
 Import `async_comprehension` from the previous file and write a `measure_runtime` coroutine that will execute `async_comprehension` four times in parallel using `asyncio.gather`.
 
