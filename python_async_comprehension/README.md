@@ -1,12 +1,10 @@
 # Python - Async Comprehension
 
-![cover](/images/ee85b9f67c384e29525b.png)
-
 ## Learning Objectives
 
-- How to write an asynchronous generator
-- How to use async comprehensions
-- How to type-annotate generators
+- [How to write an asynchronous generator]()
+- [How to use async comprehensions]()
+- [How to type-annotate generators]()
 
 ## Requirements
 
