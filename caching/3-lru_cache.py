@@ -27,6 +27,9 @@ class LRUCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
+        """ Get an item by key
+            The item is first put at the end of the cache
+        """
         if key and key in self.cache_data:
             self.cache_data.move_to_end(key)
             return self.cache_data.get(key)
