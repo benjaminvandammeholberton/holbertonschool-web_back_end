@@ -18,7 +18,8 @@ class LIFOCache(BaseCaching):
             if the cache is full, the last item is removed
         """
         if key and item:
-            if len(self.cache_data) == BaseCaching.MAX_ITEMS:
+            if key not in self.cache_data and\
+                    len(self.cache_data) == BaseCaching.MAX_ITEMS:
                 last_item = list(self.cache_data)[-1]
                 self.cache_data.pop(last_item)
                 print(f"DISCARD: {last_item}")
@@ -28,5 +29,5 @@ class LIFOCache(BaseCaching):
         """ Get an item by key
         """
         if key and key in self.cache_data:
-            return self.cache_data[key]
+            return self.cache_data.get(key)
         return None
