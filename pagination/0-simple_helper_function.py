@@ -6,10 +6,16 @@ Simple helper function
 
 def index_range(page: int, page_size: int) -> tuple[int, int]:
     """
-    Return a tuple of size two containing a start index and an end index
-    corresponding to the range of indexes to return in a list for those
-    particular pagination parameters.
+    Calculates the starting and ending indices for a given page in a paginated
+    data set.
+
+    Args:
+        page (int): The page number for which to calculate the indices.
+        page_size (int): The number of items per page.
+
+    Returns:
+        tuple: A tuple containing the starting and ending indices.
     """
-    start_index = (page - 1) * page_size
+    start_index = page * page_size - page_size
     end_index = page_size * page
     return (start_index, end_index)
