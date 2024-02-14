@@ -1,23 +1,14 @@
 #!/usr/bin/env python3
-"""
-Calculates the starting and ending indices for a given page in a paginated
-data set.
+""" Simple helper function
 """
 
 
-def index_range(page, page_size):
+def index_range(page: int, page_size: int) -> tuple[int, int]:
     """
-    Calculates the starting and ending indices for a given page in a paginated
-    data set.
-
-    Args:
-        page (int): The page number for which to calculate the indices.
-        page_size (int): The number of items per page.
-
-    Returns:
-        tuple: A tuple containing the starting and ending indices.
+    Return a tuple of size two containing a start index and an end index
+    corresponding to the range of indexes to return in a list for those
+    particular pagination parameters.
     """
-    index_start = page * page_size - page_size
-    index_end = page * page_size
-
-    return (index_start, index_end)
+    start_index = page - 1 * page_size
+    end_index = page_size * page
+    return (start_index, end_index)
