@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" MRU Caching
+""" MRU Caching module
 """
 from collections import OrderedDict
 
