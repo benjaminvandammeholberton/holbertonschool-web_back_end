@@ -5,6 +5,7 @@ data set.
 """
 from typing import Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Calculates the starting and ending indices for a given page in a paginated
