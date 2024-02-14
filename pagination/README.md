@@ -1,8 +1,9 @@
 # Pagination
 
-![cover](/images/3646eb02de6527ca5d83.png)
-![cover](/images/746187b76bea1f46030e.png)
-![cover](/images/665ce871c2ecc66a8e71.png)
+## Ressources
+
+- [REST API Design: Pagination](https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/#pagination)
+- [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS)
 
 ## Learning Objectives
 
@@ -33,8 +34,6 @@ Data file for your project : https://intranet.hbtn.io/rltoken/7IKLZ7i4pO4MJ9CQoG
 ## Tasks
 
 ### 0. Simple helper function
-
-_mandatory_
 
 Write a function named `index_range` that takes two integer arguments `page` and `page_size`.
 
@@ -70,8 +69,6 @@ bob@dylan:~$
 &nbsp;
 
 ### 1. Simple pagination
-
-_mandatory_
 
 Copy `index_range` from the previous task and the following class into your code
 
@@ -170,8 +167,6 @@ bob@dylan:~$
 
 ### 2. Hypermedia pagination
 
-_mandatory_
-
 Replicate code from the previous task.
 
 Implement a `get_hyper` method that takes the same arguments (and defaults) as `get_page` and returns a dictionary containing the following key-value pairs:
@@ -222,8 +217,6 @@ bob@dylan:~$
 &nbsp;
 
 ### 3. Deletion-resilient hypermedia pagination
-
-_mandatory_
 
 The goal here is that if between two queries, certain rows are removed from the dataset, the user does not miss items from dataset when changing page.
 
