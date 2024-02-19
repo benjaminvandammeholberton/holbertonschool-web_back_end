@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Task 0 - Regex-ing
+Task 2 - Create logger
 """
 import logging
 import re
 from typing import List
+
+PII_FIELDS = ("name", "email", "phone", "ssn", "ip")
 
 
 def filter_datum(fields: List[str], redaction: str,
@@ -35,3 +37,14 @@ class RedactingFormatter(logging.Formatter):
         message = filter_datum(self.fields, self.REDACTION, default_message,
                                self.SEPARATOR)
         return message
+
+
+def get_logger() -> logging.Logger:
+    """function that set a logger and return it"""
+    logger = logging.getLogger = 'user_data'
+    logger.setLevel(logging.INFO)
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter(RedactingFormatter(PII_FIELDS))
+    handler.formatter(formatter)
+    logger.handler(handler)
+    return logger
