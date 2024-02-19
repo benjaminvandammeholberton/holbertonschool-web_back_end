@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Task 2 - Create logger
+Logging module
 """
 import logging
 import re
@@ -48,7 +48,7 @@ def get_logger() -> logging.Logger:
     logger.setLevel(logging.INFO)
     handler = logging.StreamHandler()
     handler.setFormatter(RedactingFormatter(PII_FIELDS))
-    logger.handler(handler)
+    logger.addHandler(handler)
     return logger
 
 
@@ -62,3 +62,31 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     cnx = mysql.connector.connect(user=user, password=password,
                                   host=host, database=database)
     return cnx
+
+
+def main():
+    """"""
+    db = get_db()
+    logger = get_logger()
+    if db and db.is_connected():
+        with db.cursor() as cursor:
+            cursor.execute("SELECT * FROM users ;")
+            rows = cursor.fetchall()
+            for row in rows:
+                message = (
+                    f"name={row[0]}; "
+                    f"email={row[1]}; "
+                    f"phone={row[2]}; "
+                    f"ssn={row[3]}; "
+                    f"password={row[4]}; "
+                    f"ip={row[5]}; "
+                    f"last_origin={row[6]}; "
+                    f"user_agent={row[7]};"
+                )
+                logger.info(message)
+    cursor.close()
+    db.close()
+
+
+if __name__ == '__main__':
+    main()
