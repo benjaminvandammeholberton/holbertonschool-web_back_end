@@ -9,8 +9,8 @@ from typing import List
 
 def filter_datum(fields: List[str], redaction: str,
                  message: str, separator: str) -> str:
-    """Returns the log messafe obfuscated"""
+    """Returns the log message obfuscated"""
     for field in fields:
-        pattern = r"(?<={}=)[^{}]+(?={})".format(field, separator, separator)
+        pattern = rf"(?<={field}=)[^{separator}]+(?={separator})"
         message = re.sub(pattern, redaction, message)
     return message
