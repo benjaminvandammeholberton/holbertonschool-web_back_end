@@ -16,3 +16,4 @@ This repository showcases my learning experiences in web back-end development at
 - ## [python_variable_annotations](/python_variable_annotations/)
 - ## [caching](/caching/)
 - ## [personal_data](/personal_data/)
+- ## [Basic_authentication](/Basic_authentication/)
