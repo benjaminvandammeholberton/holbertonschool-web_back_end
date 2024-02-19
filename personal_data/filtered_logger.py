@@ -48,4 +48,3 @@ def get_logger() -> logging.Logger:
     handler.formatter(formatter)
     logger.handler(handler)
     return logger
-
