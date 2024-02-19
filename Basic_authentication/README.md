@@ -305,9 +305,9 @@ bob@dylan:~$ API_HOST=0.0.0.0 API_PORT=5000 AUTH_TYPE=auth python3 -m api.v1.app
 ....
 ```
 
-```
 In a second terminal:
 
+```
 bob@dylan:~$ curl "http://0.0.0.0:5000/api/v1/status"
 {
   "status": "OK"
@@ -349,9 +349,9 @@ bob@dylan:~$ API_HOST=0.0.0.0 API_PORT=5000 AUTH_TYPE=basic_auth python3 -m api.
 ....
 ```
 
-```
 In a second terminal:
 
+```
 bob@dylan:~$ curl "http://0.0.0.0:5000/api/v1/status"
 {
   "status": "OK"
@@ -592,9 +592,9 @@ bob@dylan:~$ API_HOST=0.0.0.0 API_PORT=5000 AUTH_TYPE=basic_auth python3 -m api.
 ....
 ```
 
-```
 In a second terminal:
 
+```
 bob@dylan:~$ curl "http://0.0.0.0:5000/api/v1/status"
 {
   "status": "OK"
@@ -667,9 +667,9 @@ bob@dylan:~$ API_HOST=0.0.0.0 API_PORT=5000 AUTH_TYPE=basic_auth python3 -m api.
 ....
 ```
 
-```
 In a second terminal:
 
+```
 bob@dylan:~$ curl "http://0.0.0.0:5000/api/v1/status"
 {
   "status": "OK"
