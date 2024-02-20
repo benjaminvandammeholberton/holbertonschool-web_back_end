@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ Module for basic auth
 """
+from flask import abort
 import base64
 from typing import TypeVar
 from api.v1.auth.auth import Auth
@@ -63,10 +64,27 @@ class BasicAuth(Auth):
                 user_pwd is None or
                 not isinstance(user_pwd, str)):
             return None
-        if DATA == {}:
-            return None
+        # if DATA == {}:
+        #     return None
         user = User.search({'email': user_email})[0]
         if not user:
             return None
         if user.is_valid_password(user_pwd):
             return user
+
+    def current_user(self, request=None) -> TypeVar('User'):
+        """ Get the current user based on the request
+        """
+        try:
+            authorization_header = self.authorization_header(request)
+            authorization = self.extract_base64_authorization_header(
+                authorization_header)
+            authorization_decoded = self.decode_base64_authorization_header(
+                authorization)
+            user_credential = self.extract_user_credentials(
+                authorization_decoded)
+            user = self.user_object_from_credentials(user_credential[0],
+                                                     user_credential[1])
+            return user
+        except Exception:
+            abort(403)
