@@ -37,9 +37,7 @@ class BasicAuth(Auth):
         except Exception:
             return None
 
-    def extract_user_credentials(self,
-                                 decoded_base64_authorization_header: str)\
-            -> tuple[str, str]:
+    def extract_user_credentials(self, decoded_base64_authorization_header: str) -> tuple[str, str]:
         """ Function that extractu user crednential from a decoded
             authorization header
         Returns:
