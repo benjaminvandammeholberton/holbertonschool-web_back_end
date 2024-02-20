@@ -58,7 +58,9 @@ class BasicAuth(Auth):
         """ Function that retrieve an user based on the credentials
         """
         if (user_email is None or
-                user_pwd is None):
+                not isinstance(user_email, str) or
+                user_pwd is None or
+                not isinstance(user_pwd, str)):
             return None
         if User.count() == 0:
             return None
