@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """ Module of SessionAuth views
 """
 from api.v1.views import app_views
