@@ -17,3 +17,4 @@ This repository showcases my learning experiences in web back-end development at
 - ## [caching](/caching/)
 - ## [personal_data](/personal_data/)
 - ## [Basic_authentication](/Basic_authentication/)
+- ## [Session_authentication](/Session_authentication/)
