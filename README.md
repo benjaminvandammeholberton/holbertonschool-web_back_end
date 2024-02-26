@@ -18,3 +18,4 @@ This repository showcases my learning experiences in web back-end development at
 - ## [personal_data](/personal_data/)
 - ## [Basic_authentication](/Basic_authentication/)
 - ## [Session_authentication](/Session_authentication/)
+- ## [user_authentication_service](/user_authentication_service/)
