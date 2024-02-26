@@ -66,4 +66,5 @@ class DB:
                     raise ValueError
         else:
             raise ValueError
+        self._session.add(user)
         self._session.commit()
