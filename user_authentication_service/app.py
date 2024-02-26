@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Entry point
 """
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ app = Flask(__name__)
 def test():
     """ Route to test the server
     """
-    return Flask.jsonify({"message": "Bienvenue"})
+    return jsonify({"message": "Bienvenue"})
 
 
 if __name__ == '__name__':
