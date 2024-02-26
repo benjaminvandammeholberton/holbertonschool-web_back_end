@@ -33,6 +33,8 @@ class DB:
     def add_user(self, email: str, hashed_password: str) -> User:
         """ Add user to the database
         """
+        if not email or not hashed_password:
+            return None
         new_user = User(email=email, hashed_password=hashed_password)
         print(new_user.__dict__)
         self._session.add(new_user)
