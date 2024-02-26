@@ -3,11 +3,11 @@
 """
 from flask import Flask, jsonify
 
-app = Flask()
+app = Flask(__name__)
 
 
-@app.route('GET', "/")
-def test():
+@app.route("/")
+def test() -> str:
     """ Route to test the server
     """
     return jsonify({"message": "Bienvenue"})
