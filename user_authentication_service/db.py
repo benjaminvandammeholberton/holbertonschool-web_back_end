@@ -57,15 +57,15 @@ class DB:
             raise
 
     def update_user(self, user_id: int, **kwargs) -> None:
-        user = self._session.query(User).filter(User.id == user_id).first()
-        if user:
-            for key, value in kwargs.items():
-                if hasattr(user, key):
-                    setattr(user, key, value)
-                else:
-                    raise ValueError
-            self._session.add(user)
-            self._session.commit()
-            return None
-        else:
-            raise ValueError
+        """Updates the user's attributes"""
+        session = self._session
+        user = self.find_user_by(id=user_id)
+
+        for k, v in kwargs.items():
+            if hasattr(user, k):
+                setattr(user, k, v)
+            else:
+                raise ValueError
+        session.add(user)
+        session.commit()
+        return None
