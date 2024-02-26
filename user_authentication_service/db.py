@@ -55,3 +55,15 @@ class DB:
 
         except InvalidRequestError:
             raise
+
+    def update_user(self, user_id: int, **kwargs) -> None:
+        user = self._session.query(User).filter(User.id == user_id).first()
+        if user:
+            for key, value in kwargs.items():
+                if hasattr(user, key):
+                    setattr(user, key, value)
+                else:
+                    raise ValueError
+        else:
+            raise ValueError
+        self._session.commit()
