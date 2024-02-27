@@ -49,12 +49,17 @@ class Auth:
             return False
 
     def create_session(self, email: str) -> str:
-        """ Create user session and return session ID
+        """
+        Finds the user corresponding to the email,
+        generates a new UUID and stores it in the
+        database as the user's session_id.
+        Returns the session ID
         """
         try:
-            session_id = _generate_uuid()
             user = self._db.find_user_by(email=email)
-            self._db.update_user(user.id, session_id=session_id)
+            user_id = user.id
+            session_id = _generate_uuid()
+            self._db.update_user(user_id, session_id=session_id)
             return session_id
         except Exception:
             return None
