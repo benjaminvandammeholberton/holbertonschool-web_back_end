@@ -106,3 +106,5 @@ class Auth:
 
         except Exception:
             ValueError
+
+        return None
