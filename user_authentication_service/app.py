@@ -48,7 +48,7 @@ def login():
         abort(401)
 
 
-@app.route('/sessions', methods=['DELETE'], strict_slashes=False)
+@app.route('/sessions', methods=['DELETE'])
 def logout() -> str:
     """ Route to logou
     """
@@ -56,7 +56,7 @@ def logout() -> str:
     try:
         user = AUTH.get_user_from_session_id(session_id)
         AUTH.destroy_session(user.id)
-        return redirect("http://localhost:5000/")
+        return redirect("/")
     except Exception:
         abort(403)
 
