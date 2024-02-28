@@ -5,8 +5,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
-from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import InvalidRequestError
+from sqlalchemy.orm.exc import NoResultFound
 
 from user import Base, User
 
@@ -18,7 +18,7 @@ class DB:
     def __init__(self) -> None:
         """Initialize a new DB instance
         """
-        self._engine = create_engine("sqlite:///a.db")
+        self._engine = create_engine("sqlite:///a.db", echo=False)
         Base.metadata.drop_all(self._engine)
         Base.metadata.create_all(self._engine)
         self.__session = None
@@ -33,43 +33,43 @@ class DB:
         return self.__session
 
     def add_user(self, email: str, hashed_password: str) -> User:
-        """ Add user to the database
-        """
-        if not email or not hashed_password:
-            return None
-        new_user = User(email=email, hashed_password=hashed_password)
-        self._session.add(new_user)
-        self._session.commit()
-        return new_user
+        """Saves a user to the database"""
+        user = User()
+        user.email = email
+        user.hashed_password = hashed_password
+
+        session = self._session
+
+        session.add(user)
+        session.commit()
+
+        return user
 
     def find_user_by(self, **kwargs) -> User:
-        """ This method takes in arbitrary keyword arguments and returns
-            the first row found in the users table as filtered by the
-            method’s input arguments.
         """
+        Returns the first row found in the users table
+        as filtered by the arguments kwargs
+        """
+        session = self._session
         try:
-            user = self._session.query(User).filter_by(**kwargs).first()
+            query = session.query(User).filter_by(**kwargs)
+            user = query.first()
             if not user:
                 raise NoResultFound
-            return user
-
+            return query.first()
         except InvalidRequestError:
             raise
 
     def update_user(self, user_id: int, **kwargs) -> None:
         """Updates the user's attributes"""
-        try:
-            session = self._session
-            user = self.find_user_by(id=user_id)
+        session = self._session
+        user = self.find_user_by(id=user_id)
 
-            for k, v in kwargs.items():
-                if hasattr(user, k):
-                    setattr(user, k, v)
-                else:
-                    raise ValueError
-            session.add(user)
-            session.commit()
-            return None
-
-        except Exception:
-            raise
+        for k, v in kwargs.items():
+            if hasattr(user, k):
+                setattr(user, k, v)
+            else:
+                raise ValueError
+        session.add(user)
+        session.commit()
+        return None
