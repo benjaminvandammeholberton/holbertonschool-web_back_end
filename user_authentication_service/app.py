@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Entry point
 """
-from flask import Flask, jsonify, request, abort, make_response
+from flask import Flask, jsonify, request, abort, make_response, redirect
 
 from auth import Auth
 
@@ -48,5 +48,18 @@ def login():
         abort(401)
 
 
+@app.route("/sessions", methods=['DELETE'])
+def logout():
+    """ Route to logout
+    """
+    try:
+        session_id = request.cookies.get('session_id')
+        AUTH.destroy_session(session_id)
+        return redirect('/')
+
+    except Exception:
+        abort(403)
+
+
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port="5000")
+    app.run(host="0.0.0.0", port="5001")
