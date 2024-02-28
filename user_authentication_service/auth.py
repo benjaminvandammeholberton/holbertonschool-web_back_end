@@ -85,9 +85,9 @@ class Auth:
         """ Generates reset password token
         """
         try:
-            self._db.find_user_by(email=email)
+            user = self._db.find_user_by(email=email)
             token = str(uuid4())
-            self._db.update_user(reset_token=token)
+            self._db.update_user(user.id, reset_token=token)
             return token
 
         except Exception:
