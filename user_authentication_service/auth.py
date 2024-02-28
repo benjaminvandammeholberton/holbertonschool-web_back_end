@@ -103,8 +103,7 @@ class Auth:
             hashed_password = _hash_password(password)
             self._db.update_user(user.id, reset_token=None,
                                  hashed_password=hashed_password)
+            return None
 
         except Exception:
-            ValueError
-
-        return None
+            raise ValueError
