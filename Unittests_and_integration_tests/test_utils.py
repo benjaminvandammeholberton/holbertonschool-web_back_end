@@ -2,10 +2,10 @@
 """ Unittests module for utils file
 """
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 from parameterized import parameterized
 from utils import access_nested_map, get_json
-import requests
+from typing import Dict
 
 
 class TestAccessNestedMap(unittest.TestCase):
