@@ -26,7 +26,9 @@ def get_user() -> dict | None:
 @app.before_request
 def before_request():
     """set user to g.user"""
-    g.user = get_user()
+    user = get_user()
+    if user:
+        g.user = user
 
 
 class Config():
@@ -39,7 +41,7 @@ class Config():
 app.config.from_object(Config)
 
 
-# @babel.localeselector
+@babel.localeselector
 def get_locale():
     """Get locale"""
     if ('locale' in request.args and
@@ -52,7 +54,11 @@ def get_locale():
 @app.route('/')
 def index():
     """Return index.html"""
-    return render_template('5-index.html', username=g.user['name'])
+    try:
+        username = g.user["name"]
+    except Exception:
+        username = None
+    return render_template("5-index.html", username=username)
 
 
 if __name__ == '__main__':
