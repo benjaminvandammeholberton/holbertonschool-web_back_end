@@ -2,11 +2,10 @@
 """Route module for the API"""
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
+from typing import Dict
 
 app = Flask(__name__)
 babel = Babel(app)
-
-
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
     2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
@@ -15,8 +14,32 @@ users = {
 }
 
 
-def get_user() -> dict | None:
-    """Retrieve an user from the param 'login_as'"""
+class Config:
+    """Config class"""
+
+    LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
+
+
+app.config.from_object(Config)
+
+
+@babel.localeselector
+def get_locale() -> str:
+    """
+    This function is invoked for each request
+    to select a language translation to use for that request
+    """
+    languages = app.config['LANGUAGES']
+    locale = request.args.get("locale")
+    if locale and locale in languages:
+        return locale
+    return request.accept_languages.best_match(languages)
+
+
+def get_user() -> Dict:
+    """Returns a user dictionary or None based on the ID"""
     try:
         user_id = int(request.args.get("login_as"))
         if user_id in users.keys():
@@ -27,35 +50,15 @@ def get_user() -> dict | None:
 
 @app.before_request
 def before_request():
-    """Set g.user"""
+    """Finds a user if any, and set it as a global on flask.g.user"""
     user = get_user()
     if user:
         g.user = user
 
 
-class Config():
-    """Config class"""
-    LANGUAGES = ["en", "fr"]
-    BABEL_DEFAULT_LOCALE = "en"
-    BABEL_DEFAULT_TIMEZONE = "UTC"
-
-
-app.config.from_object(Config)
-
-
-@babel.localeselector
-def get_locale():
-    """Get locale"""
-    if ('locale' in request.args and
-            request.args['locale'] in app.config['LANGUAGES']):
-        return request.args['locale']
-
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
-@app.route('/')
-def index():
-    """Return index.html"""
+@app.route("/")
+def hello_world():
+    """Route that renders a simple template"""
     try:
         username = g.user["name"]
     except Exception:
@@ -63,5 +66,5 @@ def index():
     return render_template("5-index.html", username=username)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
