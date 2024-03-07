@@ -20,6 +20,7 @@ class Config:
 app.config.from_object(Config)
 
 
+@babel.localeselector
 def get_locale() -> str:
     """
     This function is invoked for each request
