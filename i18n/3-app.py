@@ -3,7 +3,7 @@
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, gettext
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -20,7 +20,6 @@ class Config:
 app.config.from_object(Config)
 
 
-@babel.localeselector
 def get_locale() -> str:
     """
     This function is invoked for each request
@@ -29,11 +28,15 @@ def get_locale() -> str:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
+gettext("Welcome to Holberton")
+gettext("Hello world!")
+
+
 @app.route("/")
 def index():
     """ index route
     """
-    return render_template('2-index.html')
+    return render_template('3-index.html')
 
 
 if __name__ == "__main__":
