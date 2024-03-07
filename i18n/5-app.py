@@ -17,9 +17,10 @@ users = {
 
 def get_user() -> dict | None:
     """Retrieve an user from the param 'login_as'"""
-    if not request.args['login_as'] or request.args['login_as'] not in users:
+    if (not request.args['login_as'] or
+            int(request.args['login_as']) not in users):
         return None
-    return users.get(request.args['login_as'])
+    return users.get(int(request.args['login_as']))
 
 
 @app.before_request
@@ -38,7 +39,7 @@ class Config():
 app.config.from_object(Config)
 
 
-@babel.localeselector
+# @babel.localeselector
 def get_locale():
     """Get locale"""
     if ('locale' in request.args and
@@ -51,8 +52,8 @@ def get_locale():
 @app.route('/')
 def index():
     """Return index.html"""
-    return render_template('5-index.html')
+    return render_template('5-index.html', username=g.user['name'])
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
