@@ -17,15 +17,17 @@ users = {
 
 def get_user() -> dict | None:
     """Retrieve an user from the param 'login_as'"""
-    if (not request.args['login_as'] or
-            int(request.args['login_as']) not in users):
+    try:
+        user_id = int(request.args.get("login_as"))
+        if user_id in users.keys():
+            return users[user_id]
+    except Exception:
         return None
-    return users.get(int(request.args['login_as']))
 
 
 @app.before_request
 def before_request():
-    """set user to g.user"""
+    """Set g.user"""
     user = get_user()
     if user:
         g.user = user
@@ -62,4 +64,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
