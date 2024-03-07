@@ -59,7 +59,7 @@ def before_request():
 
 @app.route('/')
 def index():
-    """index.html
+    """index.htm
     """
     try:
         username = g.user['name']
