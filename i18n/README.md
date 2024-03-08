@@ -102,7 +102,7 @@ Now you should be able to test different translations by visiting `http://127.0.
 
 Visiting `http://127.0.0.1:5000/?locale=fr` should display this level 1 heading: 
 
-Bonjour monde !
+**Bonjour monde!**
 
 ### 5. Mock logging in
 
@@ -125,90 +125,78 @@ Define a `before_request` function and use the `app.before_request` decorator to
 
 In your HTML template, if a user is logged in, in a paragraph tag, display a welcome message otherwise display a default message as shown in the table below.
 
-| **msgid**	 | **English** | **French**
-| `logged_in_as` | `"You are logged in as %(username)s."` | `"Vous êtes connecté en tant que %(username)s."` |
-| `not_logged_in` | `"You are not logged in."` | `"Vous n'êtes pas connecté."` |
+| **msgid**	      | **English**                            | **French**                                       |
+|-----------------|----------------------------------------|--------------------------------------------------|
+| `logged_in_as`  | `"You are logged in as %(username)s."` | `"Vous êtes connecté en tant que %(username)s."` |
+| `not_logged_in` | `"You are not logged in."`             | `"Vous n'êtes pas connecté."`                    |
 
 Visiting `http://127.0.0.1:5000/` in your browser should display this:
 
+**Hello world!**
+
+*You are not logged in.*
 
 
 Visiting `http://127.0.0.1:5000/?login_as=2` in your browser should display this: 
 
-Repo:
+**Hello world!**
 
-GitHub repository: holbertonschool-web_back_end
-Directory: i18n
-File: 5-app.py, templates/5-index.html
-  
-0/8 pts
-6. Use user locale
-mandatory
-Change your get_locale function to use a user’s preferred local if it is supported.
+*You are logged in as Beyonce.*
+
+### 6. Use user locale
+
+Change your `get_locale` function to use a user’s preferred local if it is supported.
 
 The order of priority should be
 
-Locale from URL parameters
-Locale from user settings
-Locale from request header
-Default locale
+1. Locale from URL parameters
+2. Locale from user settings
+3. Locale from request header
+4. Default locale
+
 Test by logging in as different users
 
+**Bonjour monde!**
 
+*Vous êtes connecté en tant que Spock.*
 
-Repo:
+### 7. Infer appropriate time zone
 
-GitHub repository: holbertonschool-web_back_end
-Directory: i18n
-File: 6-app.py, templates/6-index.html
-  
-0/6 pts
-7. Infer appropriate time zone
-mandatory
-Define a get_timezone function and use the babel.timezoneselector decorator.
+Define a `get_timezone` function and use the `babel.timezoneselector` decorator.
 
-The logic should be the same as get_locale:
+The logic should be the same as `get_locale`:
 
-Find timezone parameter in URL parameters
-Find time zone from user settings
-Default to UTC
-Before returning a URL-provided or user time zone, you must validate that it is a valid time zone. To that, use pytz.timezone and catch the pytz.exceptions.UnknownTimeZoneError exception.
+1. Find `timezone` parameter in URL parameters
+2. Find time zone from user settings
+3. Default to UTC
 
-Repo:
+Before returning a URL-provided or user time zone, you must validate that it is a valid time zone. To that, use `pytz.timezone` and catch the `pytz.exceptions.UnknownTimeZoneError` exception.
 
-GitHub repository: holbertonschool-web_back_end
-Directory: i18n
-File: 7-app.py, templates/7-index.html
-Please review your task manually with the following checklist
-in 7-app.py, there is a function get_timezone that uses the timezoneselector decorator. It should look something like this:
+### 8. Display the current time
 
-@babel.timezoneselector
-def get_timezone()
-    ...
-0/6 pts
-8. Display the current time
-#advanced
 Based on the inferred time zone, display the current time on the home page in the default format. For example:
 
-Jan 21, 2020, 5:55:39 AM or 21 janv. 2020 à 05:56:28
+`Jan 21, 2020, 5:55:39 AM` or `21 janv. 2020 à 05:56:28`
 
 Use the following translations
 
-msgid	English	French
-current_time_is	"The current time is %(current_time)s."	"Nous sommes le %(current_time)s."
-Displaying the time in French looks like this:
+| msgid	          | English                                 | French                             |
+|-----------------|-----------------------------------------|------------------------------------|
+| current_time_is |	"The current time is %(current_time)s." | "Nous sommes le %(current_time)s." |
+
+**Displaying the time in French looks like this:**
+
+**Bonjour monde!**
+
+*Vous êtes connecté en tant que Spock*
+
+*Nous somme le 19 mars 2020 à 18:20:06.*
 
 
+**Displaying the time in English looks like this:**
 
-Displaying the time in English looks like this:
+**Hello world!**
 
+*You are logged in as Spock*
 
-
-Repo:
-
-GitHub repository: holbertonschool-web_back_end
-Directory: i18n
-File: app.py, templates/index.html, translations/en/LC_MESSAGES/messages.po, translations/fr/LC_MESSAGES/messages.po
-Please review your task manually with the following checklist
-in translations/en/LC_MESSAGES/messages.po, there is a msgid current_time_is with corresponding msgstr “The current time is %(current_time)s.”
-
+*The current time is Mar 19, 19, 2020, 6:20:24 PM.*
