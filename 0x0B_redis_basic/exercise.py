@@ -2,14 +2,14 @@
 """Redis exercice"""
 
 import redis
-from typing import Union
+from typing import Union, Optional, Callable
 from uuid import uuid4
 
 
 class Cache():
     """ Cach class"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """ Initialization"""
         self._redis = redis.Redis()
         self._redis.flushdb()
@@ -19,3 +19,19 @@ class Cache():
         id = str(uuid4())
         self._redis.set(id, data)
         return id
+
+    def get(self, key: str, fn: Optional[Callable]) -> Union[str, int, float]:
+        """get method for redis"""
+        value = self._redis.get(key)
+        print(value)
+        if fn is None:
+            return value
+        return fn(value)
+
+    def get_int(self, value):
+        """parametrize get method with the int conversion function"""
+        return self.get(value, int)
+
+    def get_string(self, value):
+        """parametrize get method with the string conversion function"""
+        return lambda value: value.decode("utf-8")
