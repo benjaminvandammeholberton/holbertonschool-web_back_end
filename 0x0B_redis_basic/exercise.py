@@ -20,18 +20,20 @@ class Cache():
         self._redis.set(id, data)
         return id
 
-    def get(self, key: str, fn: Optional[Callable]) -> Union[str, int, float]:
+    def get(self, key: str, fn: Optional[Callable]) -> Union[str, int, bytes,
+                                                             float, None]:
         """get method for redis"""
         value = self._redis.get(key)
-        print(value)
+        if value is None:
+            return None
         if fn is None:
             return value
         return fn(value)
 
-    def get_int(self, value):
+    def get_int(self, value: str) -> int:
         """parametrize get method with the int conversion function"""
         return self.get(value, int)
 
-    def get_string(self, value):
+    def get_string(self, value: str) -> str:
         """parametrize get method with the string conversion function"""
         return lambda value: value.decode("utf-8")
