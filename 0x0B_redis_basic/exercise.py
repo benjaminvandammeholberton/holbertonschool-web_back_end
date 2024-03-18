@@ -21,21 +21,24 @@ class Cache():
         return id
 
     def get(self, key: str, fn: Optional[Callable] = None) -> Union[str,
-                                                                    int,
                                                                     bytes,
+                                                                    int,
                                                                     float,
                                                                     None]:
         """get method for redis"""
         value = self._redis.get(key)
-        if value is None:
+        if not value:
             return None
+
         if fn:
-            (value) = fn(value)
+            value = fn(value)
 
-    def get_int(self, value: str) -> int:
-        """parametrize get method with the int conversion function"""
-        return self.get(value, int)
+        return value
 
-    def get_string(self, value: str) -> str:
-        """parametrize get method with the string conversion function"""
-        return lambda value: value.decode("utf-8")
+    def get_int(self, key: str) -> int:
+        """Parametrizes get with the correct conversion function"""
+        return self.get(key, int)
+
+    def get_str(self, key: str) -> str:
+        """Parametrizes get with the correct conversion function"""
+        return self.get(key, lambda value: value.decode("utf-8"))
