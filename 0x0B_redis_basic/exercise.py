@@ -7,6 +7,28 @@ from uuid import uuid4
 from functools import wraps
 
 
+def replay(method: Callable) -> None:
+    """
+    Displays the history of calls of a particular function
+    """
+    method_name = method.__qualname__
+    r = redis.Redis()
+
+    input = f'{method_name}:inputs'
+    output = f'{method_name}:outputs'
+
+    inputs = r.lrange(input, 0, -1)
+    outputs = r.lrange(output, 0, -1)
+
+    in_ou = list(zip(inputs, outputs))
+    print(f'{method_name} was called {len(in_ou)} times:')
+    for element in in_ou:
+        print(
+            f'{method_name}(*{element[0].decode("utf-8")}) ->\
+                {element[1].decode("utf-8")}'
+        )
+
+
 def count_calls(method: Callable) -> Callable:
     """
     Count how many times methods of the Cache class are called
@@ -43,7 +65,7 @@ def call_history(method: Callable) -> Callable:
 
 
 class Cache():
-    """ Cach class"""
+    """ Cach class based on redis"""
 
     def __init__(self) -> None:
         """ Initialization"""
