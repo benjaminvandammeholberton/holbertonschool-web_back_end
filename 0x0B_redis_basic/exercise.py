@@ -26,8 +26,6 @@ class Cache():
         value = self._redis.get(key)
         if value is None:
             return None
-        if fn is None:
-            return value
         return fn(value)
 
     def get_int(self, value: str) -> int:
