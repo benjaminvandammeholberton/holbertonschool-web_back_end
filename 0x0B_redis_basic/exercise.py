@@ -15,6 +15,12 @@ class Cache():
 
     def store(self, data: str | bytes | int | float) -> str:
         """Store data in redis database"""
-        id = str(uuid4())
-        self._redis.set(id, data)
-        return id
+        if (
+                data is isinstance(str) or
+                data is isinstance(bytes) or
+                data is isinstance(int) or
+                data is isinstance(float)
+        ):
+            id = str(uuid4())
+            self._redis.set(id, data)
+            return id
