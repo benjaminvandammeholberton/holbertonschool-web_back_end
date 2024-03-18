@@ -20,7 +20,7 @@ class Cache():
         self._redis.set(id, data)
         return id
 
-    def get(self, key: str, fn: Optional[Callable] = None) -> Union[str,
+    def get(self, key: str, fn: Optional[Callable] = None -> Union[str,
                                                                     int,
                                                                     bytes,
                                                                     float,
