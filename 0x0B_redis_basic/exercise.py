@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Redis exercice"""
 
-from uuid import uuid4
 import redis
+from typing import Union
+from uuid import uuid4
 
 
 class Cache():
@@ -13,12 +14,8 @@ class Cache():
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def store(self, data: str | bytes | int | float) -> str:
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         """Store data in redis database"""
-        try:
-            id = str(uuid4())
-            self._redis.set(id, data)
-            return id
-
-        except (Exception):
-            return None
+        id = str(uuid4())
+        self._redis.set(id, data)
+        return id
