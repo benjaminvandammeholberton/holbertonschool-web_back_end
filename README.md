@@ -24,7 +24,7 @@ This repository contains a collection of projects that I completed as part of my
 - **[User authentication service](/user_authentication_service/)**
 - **[Unittests and integration tests](/Unittests_and_integration_tests/)**
 - **[i18n](/i18n/)**
-- **[Redis - basic](/0x0B_redis_basic)
+- **[Redis - basic](/0x0B_redis_basic)**
 
 ## How to Use
 
