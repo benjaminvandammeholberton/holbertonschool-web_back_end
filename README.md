@@ -15,8 +15,8 @@ This repository contains a collection of projects that I completed as part of my
 - **[NoSQL](/NoSQL/)**
 - **[Pagination](/pagination/)**
 - **[Python - async function](/python_async_function/)**
-- **[python - async comprehension](/python_async_comprehension/)**
-- **[python - variable annotations](/python_variable_annotations/)**
+- **[Python - async comprehension](/python_async_comprehension/)**
+- **[Python - variable annotations](/python_variable_annotations/)**
 - **[Caching](/caching/)**
 - **[Personal data](/personal_data/)**
 - **[Basic authentication](/Basic_authentication/)**
