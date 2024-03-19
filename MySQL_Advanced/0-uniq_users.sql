@@ -1,4 +1,4 @@
--- Creates a table 'users'
+-- Task 0
 
 -- Creates table 'users' and set the column 'id', 'email' and 'name'
 CREATE TABLE IF NOT EXISTS users (
