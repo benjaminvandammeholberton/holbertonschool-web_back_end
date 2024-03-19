@@ -25,6 +25,7 @@ This repository contains a collection of projects that I completed as part of my
 - **[Unittests and integration tests](/Unittests_and_integration_tests/)**
 - **[i18n](/i18n/)**
 - **[Redis - basic](/0x0B_redis_basic)**
+- **[MySQL - advanced](/MySQL_Advanced/)**
 
 ## How to Use
 
