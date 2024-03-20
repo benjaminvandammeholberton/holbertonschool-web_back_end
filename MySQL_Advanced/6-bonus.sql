@@ -3,7 +3,7 @@
 -- Creates a stored procedure 'Addbonus' that adds a new correction for a student
 DELIMITER //
 
-CREATE PROCEDURE add_bonus(IN user_id INT,
+CREATE PROCEDURE AddBonus(IN user_id INT,
                         IN project_name VARCHAR(255), IN score INT)
 BEGIN
     DECLARE project_id INT;
@@ -14,7 +14,7 @@ BEGIN
     ELSE
         INSERT INTO projects (name) VALUES (project_name);
         SET project_id = LAST_INSERT_ID();
-        INSERT INTO score (user_id, project_id, score) VALUES (user_id, project_id, score);
+        INSERT INTO corrections (user_id, project_id, score) VALUES (user_id, project_id, score);
     END IF;
 END //
 
