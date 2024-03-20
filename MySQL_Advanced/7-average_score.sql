@@ -18,7 +18,7 @@ IF nbr_of_score != 0 THEN
 SELECT SUM(score) INTO total_score FROM corrections WHERE user_id = user_id ;
 
 
-UPDATE users SET average_score  total_score / nbr_of_score WHERE id = user_id;
+UPDATE users SET average_score = total_score / nbr_of_score WHERE id = user_id;
 
 
 END IF ;
