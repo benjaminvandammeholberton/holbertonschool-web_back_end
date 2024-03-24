@@ -1,6 +1,9 @@
 # ES6 classes
 
-![cover](/images/817248fb77fb5c2cef3f.jpeg)
+## Resources
+
+- [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+- [Metaprogramming](https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/#symbolspecies)
 
 ## Learning Objectives
 
