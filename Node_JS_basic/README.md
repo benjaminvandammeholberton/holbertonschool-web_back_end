@@ -309,7 +309,7 @@ bob@dylan:~$
 ```
 &nbsp;
 
-### 5. Create a small HTTP server using Node's HTTP module
+### 5. Create a more complex HTTP server using Node's HTTP module
 *mandatory*
 
 In a file named ```5-http.js```, create a small HTTP server using the http module:
