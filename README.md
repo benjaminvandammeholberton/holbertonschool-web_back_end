@@ -14,6 +14,8 @@ This repository contains a collection of projects that I completed as part of my
 - **[ES6 - promise](/ES6_promise/)**
 - **[NodeJS Basics](/Node_JS_basic/)**
 - **[Unittests in JS](/unittests_in_js/)**
+- **[Queuing system in JS](/queuing_system_in_js/)**
+
 
 - **[Pagination](/pagination/)**
 - **[Python - async function](/python_async_function/)**
