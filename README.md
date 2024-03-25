@@ -13,6 +13,8 @@ This repository contains a collection of projects that I completed as part of my
 - **[ES6 - data_manipulation](/ES6_data_manipulation/)**
 - **[ES6 - promise](/ES6_promise/)**
 - **[NodeJS Basics](/Node_JS_basic/)**
+- **[Unittests in JS](/unittests_in_js/)**
+
 - **[Pagination](/pagination/)**
 - **[Python - async function](/python_async_function/)**
 - **[Python - async comprehension](/python_async_comprehension/)**
@@ -23,7 +25,9 @@ This repository contains a collection of projects that I completed as part of my
 - **[Session authentication](/Session_authentication/)**
 - **[User authentication service](/user_authentication_service/)**
 - **[Unittests and integration tests](/Unittests_and_integration_tests/)**
+
 - **[i18n](/i18n/)**
+
 - **[Redis - basic](/0x0B_redis_basic)**
 - **[MySQL - advanced](/MySQL_Advanced/)**
 - **[NoSQL](/NoSQL/)**
