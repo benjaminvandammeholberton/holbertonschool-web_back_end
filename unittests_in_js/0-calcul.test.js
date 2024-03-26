@@ -18,7 +18,11 @@ describe("calculateNumber", function () {
     assert.equal(calculateNumber(1, -2.4), -1);
   });
 
-  it("add two negative float", function () {
-    assert.equal(calculateNumber(-1.4, -2.4), -3);
+  it("add two negative floats", function () {
+    assert.equal(calculateNumber(-1.5, -2.4), -3);
+  });
+
+  it("round to the supp integer", function () {
+    assert.equal(calculateNumber(1.5, 2.5), 5);
   });
 });
