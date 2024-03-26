@@ -56,6 +56,10 @@ describe("Case type is 'SUBTRACT'", function () {
     assert.equal(calculateNumber("SUBTRACT", -1.5, -2.4), -1);
   });
 
+  it("subtract same number", function () {
+    assert.equal(calculateNumber("SUBTRACT", 1.5, 1.5), 0);
+  });
+
   it("round to the supp integer", function () {
     assert.equal(calculateNumber("SUBTRACT", 1.5, 2.5), 1);
   });
@@ -90,16 +94,16 @@ describe("Case type is 'DIVIDE'", function () {
     assert.equal(calculateNumber("DIVIDE", 1.5, 1.5), 1);
   });
 
-  it("case when round b is equal to 0", function () {
+  it("divide when round b is equal to 0", function () {
     assert.equal(calculateNumber("DIVIDE", 4, 0.4), "Error");
   });
 
-  it("case when b is equal to 0", function () {
+  it("divide when b is equal to 0", function () {
     assert.equal(calculateNumber("DIVIDE", 4, 0), "Error");
   });
 });
 
-describe("Case whe type is not 'SUM', 'SUBTRACT', 'DIVIDE'", function () {
+describe("Case when type is not 'SUM', 'SUBTRACT', 'DIVIDE'", function () {
   it("case when argument type is 'SIM'", function () {
     assert.equal(calculateNumber("SIM", 2, 3), undefined);
   });
