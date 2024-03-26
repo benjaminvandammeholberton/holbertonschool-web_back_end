@@ -95,7 +95,7 @@ describe("Case type is 'DIVIDE'", function () {
   });
 
   it("case when b is equal to 0", function () {
-    assert.equal(calculateNumber("DIVIDE", 4, 0.4), "Error");
+    assert.equal(calculateNumber("DIVIDE", 4, 0), "Error");
   });
 });
 
