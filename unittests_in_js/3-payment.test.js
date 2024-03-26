@@ -1,0 +1,13 @@
+const sinon = require("sinon");
+const expect = require("chai").expect;
+const sendPaymentRequestToApi = require("./3-payment");
+const Utils = require("./utils");
+
+describe("Test sendPaymentRequestToApi", function () {
+  it("call the Utils.calculateNumber function", function () {
+    const spy = sinon.spy(Utils, "calculateNumber");
+    sendPaymentRequestToApi(100, 20);
+    sinon.assert.calledWithExactly(spy, "SUM", 100, 20);
+    spy.restore;
+  });
+});
