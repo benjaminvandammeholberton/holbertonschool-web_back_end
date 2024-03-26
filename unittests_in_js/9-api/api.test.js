@@ -24,6 +24,13 @@ describe("Cart page", function () {
     done();
   });
 
+  it("Body is empty when param 'id' is a string", function (done) {
+    request(`${url}/string`, (error, response, body) => {
+      expect(response.body).to.be.equal("");
+    });
+    done();
+  });
+
   it("Code status is 200 when param id is a number", (done) => {
     request(`${url}/3`, (error, response, body) => {
       expect(response.statusCode).to.be.equal(200);
