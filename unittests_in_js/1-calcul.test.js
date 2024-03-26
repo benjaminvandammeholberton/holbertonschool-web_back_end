@@ -93,6 +93,10 @@ describe("Case type is 'DIVIDE'", function () {
   it("case when round b is equal to 0", function () {
     assert.equal(calculateNumber("DIVIDE", 4, 0.4), "Error");
   });
+
+  it("case when b is equal to 0", function () {
+    assert.equal(calculateNumber("DIVIDE", 4, 0.4), "Error");
+  });
 });
 
 describe("Case whe type is not 'SUM', 'SUBTRACT', 'DIVIDE'", function () {
