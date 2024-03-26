@@ -1,20 +1,24 @@
+const calculateNumber = require("./0-calcul.js");
 const assert = require("assert");
-const calculateNumber = require("./0-calcul");
 
 describe("calculateNumber", function () {
-  it("Checks 1 + 3", function () {
-    assert.equal(calculateNumber(1, 3), 4);
+  it("add two positive integers", function () {
+    assert.equal(calculateNumber(2, 2), 4);
   });
-  it("Checks 1 + 3.7", function () {
-    assert.equal(calculateNumber(1, 3.7), 5);
+
+  it("add two positive floats", function () {
+    assert.equal(calculateNumber(2.3, 4.6), 7);
   });
-  it("Checks 1.2 + 3.7", function () {
-    assert.equal(calculateNumber(1.2, 3.7), 5);
+
+  it("add one positive integer and one negative integer", function () {
+    assert.equal(calculateNumber(2, -1), 1);
   });
-  it("Checks 1.5 + 3.7", function () {
-    assert.equal(calculateNumber(1.5, 3.7), 6);
+
+  it("add one positive integer and one negative float", function () {
+    assert.equal(calculateNumber(1, -2.4), -1);
   });
-  it("Checks -3 + 1.2", function () {
-    assert.equal(calculateNumber(-3, 1.2), -2);
+
+  it("add two negative float", function () {
+    assert.equal(calculateNumber(-1.4, -2.4), -3);
   });
 });
