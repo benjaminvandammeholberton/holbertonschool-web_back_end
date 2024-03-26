@@ -1,12 +1,12 @@
 {
   "name": "unittests_in_js",
   "version": "1.0.0",
-  "description": "## Resources",
-  "main": "index.js",
+  "description": "",
+  "main": "",
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "Benjamin Vandamme",
   "license": "ISC",
   "devDependencies": {
     "mocha": "^10.3.0"
